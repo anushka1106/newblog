@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-warm-beige: #F3ECE1; /* Slightly richer/darker beige base */
+  --color-warm-dark: #1A1918;  /* Darker tone for better contrast */
+  --color-sage: #8A9D81;       /* Deeper sage */
+  --color-terracotta: #F26C4F; /* Much brighter, more vibrant orange/coral */
+  --color-card-bg: rgba(253, 251, 247, 0.7); /* Translucent for the dynamic background */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-warm-beige);
+    color: var(--color-warm-dark);
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob infinite ease-in-out alternate;
+}
